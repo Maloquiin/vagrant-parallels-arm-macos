@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
 		config.vm.define "server#{i}" do |web|
 			web.vm.box = "jeffnoxon/ubuntu-20.04-arm64"
 			web.vm.box_version = "1.0.0"
-			web.vm.network "forwarded_port", host: 3000 + i, guest: 22#, auto_correct: true
+			web.vm.network "forwarded_port", host: 3000 + i, guest: 22
 			web.vm.network "private_network", ip: "10.11.10.#{i}"
 			web.vm.hostname = "server#{i}"
 
